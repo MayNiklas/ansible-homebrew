@@ -1,2 +1,14 @@
 ---
 # defaults file for ansible-homebrew
+
+# Homebrew Formula repositories to tap
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-drivers
+
+# Applications to install via Homebrew casks
+homebrew_apps: []
+
+# Packages to install with Homebrew
+homebrew_packages: []
