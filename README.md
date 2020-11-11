@@ -1,7 +1,10 @@
-Role Name
+ansible-homebrew
 =========
+[![Build Status](https://travis-ci.com/MayNiklas/ansible-homebrew.svg?branch=main)](https://travis-ci.com/MayNiklas/ansible-homebrew)
 
-A brief description of the role goes here.
+- taps homebrew-taps defined in homebrew_taps
+- installs casks defined in homebrew_apps
+- installs packages defined in homebrew_packages via brew
 
 Requirements
 ------------
