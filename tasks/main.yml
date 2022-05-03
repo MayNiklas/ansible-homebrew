@@ -1,6 +1,12 @@
 ---
 # tasks file for ansible-homebrew
 
+- name: Add homebrew line to ~/.zprofile
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zprofile"
+    line: eval $(/opt/homebrew/bin/brew shellenv)
+    create: yes
+
 - name: Ensure taps
   homebrew_tap:
     name: "{{ item.name|default(item) }}"
