@@ -9,6 +9,5 @@ homebrew_taps:
 
 # Applications to install via Homebrew casks
 homebrew_apps: []
-
 # Packages to install with Homebrew
 homebrew_packages: []
