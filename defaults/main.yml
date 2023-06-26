@@ -7,6 +7,8 @@ homebrew_taps:
   - homebrew/cask
   - homebrew/cask-drivers
 
+homebrew_taps_github: []
+
 # Applications to install via Homebrew casks
 homebrew_apps: []
 # Packages to install with Homebrew
