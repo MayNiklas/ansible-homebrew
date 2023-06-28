@@ -42,6 +42,13 @@
   loop: "{{ homebrew_packages }}"
   when: homebrew_packages|default([])|count > 0
 
+- name: Ensure packages removed
+  community.general.homebrew:
+    name: "{{ item.name|default(item) }}"
+    state: "{{ item.state|default('absent') }}"
+  loop: "{{ homebrew_packages_removed }}"
+  when: homebrew_packages_removed|default([])|count > 0
+
 - name: Ensure apps
   community.general.homebrew_cask:
     name: "{{ item.name|default(item) }}"
@@ -50,3 +57,10 @@
     accept_external_apps: true
   loop: "{{ homebrew_apps }}"
   when: homebrew_apps|default([])|count > 0
+
+- name: Ensure apps removed
+  community.general.homebrew_cask:
+    name: "{{ item.name|default(item) }}"
+    state: "{{ item.state|default('absent') }}"
+  loop: "{{ homebrew_apps_removed }}"
+  when: homebrew_apps_removed|default([])|count > 0

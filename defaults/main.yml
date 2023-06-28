@@ -11,5 +11,12 @@ homebrew_taps_github: []
 
 # Applications to install via Homebrew casks
 homebrew_apps: []
+
+# Applications to remove via Homebrew casks
+homebrew_apps_removed: []
+
 # Packages to install with Homebrew
 homebrew_packages: []
+
+# Packages to remove with Homebrew
+homebrew_packages_removed: []
