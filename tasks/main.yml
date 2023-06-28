@@ -8,14 +8,14 @@
     create: true
 
 - name: Ensure taps
-  homebrew_tap:
+  community.general.homebrew_tap:
     name: "{{ item.name|default(item) }}"
     state: "{{ item.state|default('present') }}"
   loop: "{{ homebrew_taps }}"
   when: homebrew_taps|default([])|count > 0
 
 - name: Ensure taps from GitHub
-  homebrew_tap:
+  community.general.homebrew_tap:
     name: "{{ item.name|default(item) }}"
     state: "{{ item.state|default('present') }}"
     url: "{{ item.url }}"
@@ -35,7 +35,7 @@
     upgrade_all: true
 
 - name: Ensure packages
-  homebrew:
+  community.general.homebrew:
     name: "{{ item.name|default(item) }}"
     state: "{{ item.state|default('present') }}"
     install_options: "{{ item.install_options | default(omit) }}"
@@ -43,7 +43,7 @@
   when: homebrew_packages|default([])|count > 0
 
 - name: Ensure apps
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ item.name|default(item) }}"
     state: "{{ item.state|default('present') }}"
     install_options: "{{ item.install_options | default(omit) }}"
