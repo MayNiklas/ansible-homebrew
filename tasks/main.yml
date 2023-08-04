@@ -22,18 +22,6 @@
   loop: "{{ homebrew_taps_github }}"
   when: homebrew_taps_github|default([])|count > 0
 
-- name: Ensure homebrew is up to date
-  community.general.homebrew:
-    update_homebrew: true
-
-- name: Upgrade all homebrew packages
-  community.general.homebrew:
-    upgrade_all: true
-
-- name: Upgrade all homebrew Casks
-  community.general.homebrew_cask:
-    upgrade_all: true
-
 - name: Ensure packages
   community.general.homebrew:
     name: "{{ item.name|default(item) }}"
